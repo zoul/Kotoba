@@ -1,0 +1,76 @@
+@import url(background.cgi);
+
+body
+{
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 14px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 0px;
+}
+
+h1 span
+{
+    background: black;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-bottom: 1px;
+    display: block;
+    float: left;
+    clear: both;
+}
+
+a {
+  color: black;  
+}
+
+div.column
+{
+    background: white;
+    width: 230px;
+    padding: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+.menu
+{
+    padding-top: 15px;
+    text-transform: lowercase;
+    font-weight: bold;
+    list-style: none;
+    padding-left: 0px; 
+    clear: both;
+}
+
+ul {
+   padding-left: 0px; 
+   list-style: square;
+}
+
+li {
+    padding-left: 0px;
+}
+
+ul.silent
+{
+    list-style: none;
+}
+
+.end
+{
+    clear: both;
+}
+
+body.jsWorks div.column div, body.jsWorks h2
+{
+    display: none;
+}
