@@ -23,8 +23,8 @@ function decorate_arrows(node)
 {
     if (node.nodeType == 3)
     {
-        character_to_image(node, "→", "arrow");
-        character_to_image(node, "↔", "arrows");
+        character_to_image(node, "→", "arrow.png");
+        character_to_image(node, "↔", "arrows.png");
     }
     else
         for (var i=0; i < node.childNodes.length; i++)

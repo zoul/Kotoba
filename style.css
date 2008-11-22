@@ -5,6 +5,8 @@ body
     font-family: Calibri, Arial, sans-serif;
     font-size: 14px;
     margin: 20px;
+    min-width: 900px;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -85,6 +87,7 @@ img.replaced
 {
     padding-left: 3px;
     padding-right: 3px;
+    vertical-align: 15%;
 }
 
 body.jsWorks div.column div, body.jsWorks h2
