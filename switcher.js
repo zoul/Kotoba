@@ -7,6 +7,10 @@ window.onload = function()
             continue;
         links[i].onclick = function()
         {
+            for (var c=0; c < links.length; c++)
+                links[c].className = '';
+            this.className = "current";
+
             // Find the parent column div, so that we can
             // collapse all the sections.
             var parent = this;

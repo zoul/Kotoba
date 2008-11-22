@@ -32,6 +32,17 @@ a {
   color: black;  
 }
 
+a:focus
+{
+    outline: none;
+}
+
+a.current
+{
+    text-decoration: none;
+    cursor: default;
+}
+
 div.column
 {
     background: white;
