@@ -1,4 +1,37 @@
-window.onload = function()
+function character_to_image(node, chr, img)
+{
+    var chpos = node.nodeValue.indexOf(chr);
+    if (chpos == -1)
+        return;
+
+    var before = node.nodeValue.substring(0, chpos);
+    var after = node.nodeValue.substring(chpos+1, node.nodeValue.length);
+    var parent = node.parentNode;
+
+    var span = document.createElement("span");
+    var image = document.createElement("img");
+    image.src = "data/" + img;
+    image.className = "replaced";
+    span.appendChild(document.createTextNode(before));
+    span.appendChild(image);
+    span.appendChild(document.createTextNode(after));
+
+    parent.replaceChild(span, node);
+}
+
+function decorate_arrows(node)
+{
+    if (node.nodeType == 3)
+    {
+        character_to_image(node, "→", "arrow");
+        character_to_image(node, "↔", "arrows");
+    }
+    else
+        for (var i=0; i < node.childNodes.length; i++)
+            decorate_arrows(node.childNodes[i]);
+}
+
+function hook_links()
 {
     var links = document.getElementsByTagName("a");
     for (var i=0; i < links.length; i++)
@@ -30,4 +63,10 @@ window.onload = function()
             return false;
         }
     }
+}
+
+window.onload = function()
+{
+    hook_links();
+    decorate_arrows(document.body);
 }

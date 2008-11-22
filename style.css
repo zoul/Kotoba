@@ -81,6 +81,12 @@ ul.silent
     clear: both;
 }
 
+img.replaced
+{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 body.jsWorks div.column div, body.jsWorks h2
 {
     display: none;
