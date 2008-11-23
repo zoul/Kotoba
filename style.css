@@ -54,6 +54,17 @@ div.column
     float: left;
 }
 
+ul {
+   padding-left: 0px; 
+   list-style: none;
+}
+
+li {
+    margin-left: -10px;
+    padding-left: 10px;
+    background: url(data/bullet.png) 0px 1.1ex no-repeat;
+}
+
 .menu
 {
     padding-top: 15px;
@@ -64,18 +75,9 @@ div.column
     clear: both;
 }
 
-ul {
-   padding-left: 0px; 
-   list-style: square;
-}
-
-li {
-    padding-left: 0px;
-}
-
-ul.silent
+.menu li, .silent li
 {
-    list-style: none;
+    background: none;
 }
 
 .end
@@ -87,7 +89,7 @@ img.replaced
 {
     padding-left: 3px;
     padding-right: 3px;
-    vertical-align: 15%;
+    vertical-align: 12%;
 }
 
 body.jsWorks div.column div, body.jsWorks h2
