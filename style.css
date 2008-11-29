@@ -119,3 +119,54 @@ body.jsWorks div.column div, body.jsWorks h2
 {
     display: none;
 }
+
+/* Forms */
+
+fieldset
+{
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    border-top: 1px solid black;
+    margin-top: 2ex;
+    padding-top: 2ex;
+}
+
+label.aligned
+{
+    float: left;
+    width: 58px;
+    padding: 1px;
+}
+
+input[type="text"]
+{
+    width: 158px;
+    border: 1px solid gray;
+    padding: 1px;
+}
+
+textarea
+{
+    width: 230px;
+    height: 130px;
+    margin-top: 1ex;
+    border: 1px solid gray;
+}
+
+textarea.unchanged
+{
+    color: gray;
+}
+
+input[type="submit"]
+{
+    float: right;
+    padding-left: 2ex;
+    padding-right: 2ex;
+    margin-top: 1ex;
+    background: black;
+    color: white;
+    border: none;
+    text-transform: lowercase;
+}

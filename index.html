@@ -120,6 +120,25 @@
         </div>
         <div id="poptavka">
             <h2>Poptávka</h2>
+            <form action="form.cgi" method="post">
+            <fieldset>
+                <label for="csform1" class="aligned">Jméno:</label>
+                <input type="text" name="jmeno" id="csform1"/><br>
+                <label for="csform2" class="aligned">Kontakt:</label>
+                <input type="text" name="kontakt" id="csform2"/><br>
+            </fieldset>
+            <fieldset>
+                <input id="csform3" type="radio" name="typ" value="1" checked="checked"/>
+                <label for="csform3">Mám zájem o překlad</label><br>
+                <input id="csform4" type="radio" name="typ" value="2"/>
+                <label for="csform4">Mám zájem o tlumočení</label><br>
+            </fieldset>
+            <fieldset>
+                <label for="csform5">Orientační popis zakázky:</label><br>
+                <textarea id="csform5"></textarea>
+            </fieldset>
+            <input type="submit" value="Odeslat"/>
+            </form>
         </div>
         <div id="kontakt">
             <h2>Kontakt</h2>
@@ -129,23 +148,6 @@
             Telefon: +420 731 814 739<br>
             E-mail: <a href="mailto:radmila@kotoba.cz">radmila@kotoba.cz</a>
             </p>
-        </div>
-        <div id="poptavka">
-            <form action="form.cgi" method="post">
-            <fieldset>
-                <label for="jmeno">Jméno</label>
-                <input type="text" name="jmeno" id="jmeno"/>
-                <label for="kontakt">Kontakt</label>
-                <input type="text" name="kontakt" id="kontakt"/>
-            </fieldset>
-            <fieldset>
-                <label for="typ">Mám zájem o</label>
-                <input id="moo" type="radio" name="typ" value="1" checked="checked"/>
-                <label for="moo">Překlad</label>
-                <input type="radio" name="typ" value="2">Tlumočení</input>
-            </fieldset>
-            <input type="submit" value="Odeslat"/>
-            </form>
         </div>
     </div>
     <div class="column" lang="en">
