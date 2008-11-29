@@ -2,32 +2,47 @@
 
 body
 {
-    font-family: Calibri, Arial, sans-serif;
-    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5em;
     margin: 20px;
     min-width: 900px;
-    background-attachment: fixed;
 }
 
-h1 {
-    font-size: 14px;
-    font-weight: normal;
+h1
+{
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
     text-transform: uppercase;
     color: white;
     margin-top: 0px;
 }
 
+h1:lang(ja)
+{
+    font-size: 13px;
+    font-weight: normal;
+}
+
 h1 span
 {
     background: black;
-    padding-top: 5px;
-    padding-bottom: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     padding-left: 6px;
     padding-right: 6px;
     margin-bottom: 1px;
+    white-space: nowrap;
     display: block;
     float: left;
     clear: both;
+}
+
+h3
+{
+    font-size: 11px;
+    padding-bottom: 0px;
 }
 
 a {
@@ -45,6 +60,13 @@ a.current
     cursor: default;
 }
 
+p.offset
+{
+    border-top: 1px solid black;
+    padding-top: 2ex;
+    margin-top: 1ex;
+}
+
 div.column
 {
     background: white;
@@ -52,6 +74,7 @@ div.column
     padding: 20px;
     margin-right: 20px;
     float: left;
+    min-height: 230px;
 }
 
 ul {
@@ -87,8 +110,8 @@ li {
 
 img.replaced
 {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 1px;
+    padding-right: 1px;
     vertical-align: 12%;
 }
 
