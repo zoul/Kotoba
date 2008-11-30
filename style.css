@@ -41,7 +41,7 @@ h1 span
 
 h3
 {
-    font-size: 11px;
+    font-size: 12px;
     padding-bottom: 0px;
 }
 
@@ -117,7 +117,7 @@ img.replaced
     vertical-align: 12%;
 }
 
-body.jsWorks div.column div, body.jsWorks h2
+body.jsWorks div.tab, body.jsWorks h2
 {
     display: none;
 }
@@ -134,6 +134,31 @@ fieldset
     padding-top: 2ex;
 }
 
+div.error
+{
+    width: 172px;
+    margin-left: 58px;
+    text-align: center;
+    background: url(data/zobacek.png);
+    background-repeat: no-repeat;
+    background-position: 49% 100%;
+    padding-bottom: 7px;
+}
+
+div.wide
+{
+    width: 230px;
+    margin-left: 0px;
+}
+
+div.error p
+{
+    margin: 0px;
+    padding: 10px;
+    background: black;
+    color: white;
+}
+
 label.aligned
 {
     float: left;
@@ -145,7 +170,7 @@ label.aligned
 
 input[type="text"]
 {
-    width: 158px;
+    width: 167px;
     border: 1px solid gray;
     padding: 1px;
     margin-bottom: 5px;

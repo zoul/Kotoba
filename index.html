@@ -26,7 +26,7 @@
             <li><a href="#poptavka">Poptávka</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
-        <div id="sluzby">
+        <div class="tab" id="sluzby">
             <h2>Služby</h2>
             <p>Jsme dvě překladatelky japonské a české národnosti a nabízíme
             překladatelské služby v těchto jazykových kombinacích:</p>
@@ -83,7 +83,7 @@
             </ul>
 
         </div>
-        <div id="profil">
+        <div class="tab" id="profil">
             <h2>Profil</h2>
             <h3>Radmila Duroňová</h3>
             <ul>
@@ -102,7 +102,7 @@
                     překlady obchodní korespondence, odborných textů, smluv</li>
             </ul>
         </div>
-        <div id="cenik">
+        <div class="tab" id="cenik">
             <h2>Ceník</h2>
             <h3>Překlady</h3>
             <ul class="silent">
@@ -118,29 +118,29 @@
             <p>Výše uvedené ceny jsou pouze orientační, závisejí na odbornosti,
             popřípadě termínu dodání překladu.</p>
         </div>
-        <div id="poptavka">
+        <div class="tab" id="poptavka">
             <h2>Poptávka</h2>
             <form action="form.cgi" method="post">
-            <fieldset>
-                <label for="csform1" class="aligned">Jméno:</label>
-                <input type="text" name="jmeno" id="csform1"/><br>
-                <label for="csform2" class="aligned">Kontakt:</label>
-                <input type="text" name="kontakt" id="csform2"/><br>
-            </fieldset>
-            <fieldset>
-                <input id="csform3" type="radio" name="typ" value="1" checked="checked"/>
-                <label for="csform3">Mám zájem o překlad</label><br>
-                <input id="csform4" type="radio" name="typ" value="2"/>
-                <label for="csform4">Mám zájem o tlumočení</label><br>
-            </fieldset>
-            <fieldset>
-                <label for="csform5">Orientační popis zakázky:</label><br>
-                <textarea id="csform5"></textarea>
-            </fieldset>
-            <input type="submit" value="Odeslat"/>
+                <fieldset>
+                    <label for="csform1" class="aligned">Jméno:</label>
+                    <input type="text" name="jmeno" id="csform1" class="mandatory"/><br>
+                    <label for="csform2" class="aligned">Kontakt:</label>
+                    <input type="text" name="kontakt" id="csform2" class="mandatory"/><br>
+                </fieldset>
+                <fieldset>
+                    <input id="csform3" type="radio" name="typ" value="1" checked="checked"/>
+                    <label for="csform3">Mám zájem o překlad</label><br>
+                    <input id="csform4" type="radio" name="typ" value="2"/>
+                    <label for="csform4">Mám zájem o tlumočení</label><br>
+                </fieldset>
+                <fieldset>
+                    <label for="csform5">Orientační popis zakázky:</label><br>
+                    <textarea id="csform5" class="mandatory"></textarea>
+                </fieldset>
+                <input type="submit" value="Odeslat"/>
             </form>
         </div>
-        <div id="kontakt">
+        <div class="tab" id="kontakt">
             <h2>Kontakt</h2>
             <p>
             Radmila Duroňová<br>
@@ -165,7 +165,7 @@
             <li><a href="#form">Form</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div id="services">
+        <div class="tab" id="services">
             <h2>Services</h2>
             <p>We are a team of Czech and Japanese translators offering
             translation and interpreting services in the following language
@@ -219,7 +219,7 @@
                 <li>medicine</li>
             </ul>
         </div>
-        <div id="profile">
+        <div class="tab" id="profile">
             <h2>Profile</h2>
             <h3>Radmila Duroňová</h3>
             <ul>
@@ -238,7 +238,7 @@
                 <li>Translation of commercial correspondence, specialized texts, contracts</li>
             </ul>
         </div>
-        <div id="pricing">
+        <div class="tab" id="pricing">
             <h2>Pricing</h2>
             <h3>Translation services</h3>
             <ul class="silent">
@@ -254,7 +254,7 @@
             <p>Rates vary depending on the content of the documents being
             translated and on the term.</p>
         </div>
-        <div id="contact">
+        <div class="tab" id="contact">
             <h2>Contact</h2>
             <p>
             Radmila Duroňová<br>
@@ -277,7 +277,7 @@
             <li><a href="#ja_form">Form</a></li>
             <li><a href="#ja_contact">お問い合わせ</a></li>
         </ul>
-        <div id="ja_services">
+        <div class="tab" id="ja_services">
             <h2>はじめに</h2>
             <p>はじめまして！</p>
             <p>私たちは、チェコ語ネイティブと日本語ネイティブの2人による、翻訳・通訳チームです。
@@ -330,7 +330,7 @@
             <p>国籍も実績も異なる2人の翻訳者・通訳者が力を合わせることで、高い品質と専門性をそなえたサービスを提供できることが、私たちの強みです。</p>
             <p>皆様のご利用を心よりお待ちしております。</p>
         </div>
-        <div id="ja_profile">
+        <div class="tab" id="ja_profile">
             <h2>プロフィール</h2>
             <h3>Radmila Duroňová<br>(ラドミラ・ドゥロニョヴァー)</h3>
             <ul>
@@ -347,7 +347,7 @@
                 <li>自動車関連企業における翻訳・通訳業務、在宅でビジネス文書・学術文書・契約書等の翻訳に従事</li>
             </ul>
         </div>
-        <div id="ja_pricing">
+        <div class="tab" id="ja_pricing">
             <h2>料金</h2>
             <h3>翻訳</h3>
             <ul class="silent">
@@ -362,7 +362,7 @@
             </ul>
             <p>掲載された料金はあくまでも目安であり、専門的な難易度、納期等により変動する場合がございます。</p>
         </div>
-        <div id="ja_contact">
+        <div class="tab" id="ja_contact">
             <h2>お問い合わせ</h2>
             <p>
             Radmila Duroňová<br>(ラドミラ・ドゥロニョヴァー)<br>

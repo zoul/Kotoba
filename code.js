@@ -53,7 +53,8 @@ function expand_tab(name)
     // Update tab visibility
     var tabs = column.getElementsByTagName("div");
     for (var i=0; i<tabs.length; i++)
-        tabs[i].style.display = (tabs[i] == tab) ? "block" : "none";
+        if (tabs[i].className.indexOf("tab") != -1)
+            tabs[i].style.display = (tabs[i] == tab) ? "block" : "none";
 }
 
 function hook_links()
@@ -121,11 +122,76 @@ function dyna_hint(triggerId, targetId, hint)
         insert_hint(targetId, hint);
 }
 
+function error_message(lang)
+{
+    if (lang == "cs")
+        return "Tento údaj je povinný.";
+}
+
+function check_form(form)
+{
+    // Clear all errors
+    var divs = form.getElementsByTagName("div");
+    for (var i=0; i<divs.length; i++)
+        if (divs[i].className.indexOf("error") != -1)
+            divs[i].parentNode.removeChild(divs[i]);
+
+    // Get form language
+    var column = form;
+    while (column.className.indexOf("column") == -1)
+        column=column.parentNode;
+    var language = column.getAttribute("lang");
+
+    // Check mandatory inputs
+    var inputs = form.getElementsByTagName("*");
+    for (var i=0; i<inputs.length; i++)
+    {
+        if (inputs[i].className.indexOf("mandatory") == -1)
+            continue;
+        if (inputs[i].valueChangedByUser && (inputs[i].value != ""))
+            continue;
+
+        // Find the corresponding label
+        var label;
+        var parent = inputs[i].parentNode;
+        var kids = parent.getElementsByTagName("*");
+        for (var j=0; j<kids.length; j++)
+            if ((kids[j].nodeName == "LABEL") && (kids[j].getAttribute("for") == inputs[i].id))
+                label = kids[j];
+
+        // Insert error message before label
+        var error = document.createElement("div");
+        error.className = (inputs[i].nodeName == "TEXTAREA") ? "wide error" : "error";
+        error.innerHTML = "<p>" + error_message(language) + "</p>";
+        parent.insertBefore(error, label);
+        inputs[i].focus();
+        return false;
+    }
+    
+    // Find and disable the form submit button
+    var submit;
+    var inputs = form.getElementsByTagName("input");
+    for (var i=0; i<inputs.length; i++)
+        if (inputs[i].type == "submit")
+            inputs[i].disabled = true;
+
+    alert("OK");
+    return false;
+}
+
+function hook_forms()
+{
+    var forms = document.forms;
+    for (var i=0; i<forms.length; i++)
+        forms[i].onsubmit = function() { return check_form(this); }
+}
+
 window.onload = function()
 {
     hook_links();
     decorate_arrows(document.body);
     expand_anchor();
+    hook_forms();
     insert_hint('csform1', "vaše jméno, firma, …");
     insert_hint('csform2', "telefon nebo e-mail");
     dyna_hint('csform3', 'csform5', "Obor překladu, počet dokumentů, orientační rozsah v normostranách nebo slovech, zdrojový a cílový jazyk, termín, …");
