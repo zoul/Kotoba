@@ -1,28 +1,3 @@
-function expand_tab(name)
-{
-    var tab = document.getElementById(name);
-
-    // Find the parent menu
-    var menu = tab;
-    while (menu.className.indexOf("column") == -1)
-        menu = menu.parentNode;
-
-    // Update the links
-    var links = menu.getElementsByTagName("a");
-    for (var i=0; i<links.length; i++)
-        links[i].className = (links[i].href.indexOf("#"+name) == -1) ? "" : "current";
-
-    // Find the parent column div
-    var column = tab;
-    while (column.className.indexOf("column") == -1)
-        column = column.parentNode;
-
-    // Update tab visibility
-    var tabs = column.getElementsByTagName("div");
-    for (var i=0; i<tabs.length; i++)
-        tabs[i].style.display = (tabs[i] == tab) ? "block" : "none";
-}
-
 function character_to_image(node, chr, img)
 {
     var chpos = node.nodeValue.indexOf(chr);
@@ -56,6 +31,31 @@ function decorate_arrows(node)
             decorate_arrows(node.childNodes[i]);
 }
 
+function expand_tab(name)
+{
+    var tab = document.getElementById(name);
+
+    // Find the parent menu
+    var menu = tab;
+    while (menu.className.indexOf("column") == -1)
+        menu = menu.parentNode;
+
+    // Update the links
+    var links = menu.getElementsByTagName("a");
+    for (var i=0; i<links.length; i++)
+        links[i].className = (links[i].href.indexOf("#"+name) == -1) ? "" : "current";
+
+    // Find the parent column div
+    var column = tab;
+    while (column.className.indexOf("column") == -1)
+        column = column.parentNode;
+
+    // Update tab visibility
+    var tabs = column.getElementsByTagName("div");
+    for (var i=0; i<tabs.length; i++)
+        tabs[i].style.display = (tabs[i] == tab) ? "block" : "none";
+}
+
 function hook_links()
 {
     var links = document.getElementsByTagName("a");
@@ -82,9 +82,52 @@ function expand_anchor()
     expand_tab(id);
 }
 
+function insert_hint(id, hint)
+{
+    var target = document.getElementById(id);
+    target.value = hint;
+    target.className += ' unchanged';
+    target.onfocus = function()
+    {
+        if (this.valueChangedByUser)
+            return;
+        this.value = '';
+        this.className = this.className.replace("unchanged", '');
+    }
+    target.onchange = function()
+    {
+        this.valueChangedByUser = true;
+        this.className = this.className.replace("unchanged", '');
+    }
+    target.onblur = function()
+    {
+        if (this.valueChangedByUser)
+            return;
+        this.value = hint;
+        this.className += " unchanged";
+    }
+}
+
+function dyna_hint(triggerId, targetId, hint)
+{
+    var trigger = document.getElementById(triggerId);
+    trigger.onchange = function()
+    {
+        if (!this.checked)
+            return;
+        insert_hint(targetId, hint);
+    }
+    if (trigger.checked)
+        insert_hint(targetId, hint);
+}
+
 window.onload = function()
 {
     hook_links();
     decorate_arrows(document.body);
     expand_anchor();
+    insert_hint('csform1', "vaše jméno, firma, …");
+    insert_hint('csform2', "telefon nebo e-mail");
+    dyna_hint('csform3', 'csform5', "Obor překladu, počet dokumentů, orientační rozsah v normostranách nebo slovech, zdrojový a cílový jazyk, termín, …");
+    dyna_hint('csform4', 'csform5', "Obor a obsah tlumočení, místo (například město nebo obec), datum, čas, odhadovaná doba tlumočení, …");
 }

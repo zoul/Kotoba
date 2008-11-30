@@ -47,6 +47,8 @@ h3
 
 a {
   color: black;  
+  text-decoration: none;
+  border-bottom: 1px solid black;
 }
 
 a:focus
@@ -56,7 +58,7 @@ a:focus
 
 a.current
 {
-    text-decoration: none;
+    border: none;
     cursor: default;
 }
 
@@ -135,8 +137,10 @@ fieldset
 label.aligned
 {
     float: left;
-    width: 58px;
+    width: 48px;
     padding: 1px;
+    padding-right: 10px;
+    text-align: right;
 }
 
 input[type="text"]
@@ -144,6 +148,7 @@ input[type="text"]
     width: 158px;
     border: 1px solid gray;
     padding: 1px;
+    margin-bottom: 5px;
 }
 
 textarea
@@ -152,9 +157,12 @@ textarea
     height: 130px;
     margin-top: 1ex;
     border: 1px solid gray;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5em;
 }
 
-textarea.unchanged
+.unchanged
 {
     color: gray;
 }
@@ -164,6 +172,8 @@ input[type="submit"]
     float: right;
     padding-left: 2ex;
     padding-right: 2ex;
+    padding-bottom: 4px;
+    padding-top: 2px;
     margin-top: 1ex;
     background: black;
     color: white;
