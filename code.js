@@ -86,6 +86,9 @@ function expand_anchor()
 function insert_hint(id, hint)
 {
     var target = document.getElementById(id);
+    if (target.valueChangedByUser)
+        return;
+
     target.value = hint;
     target.className += ' unchanged';
     target.onfocus = function()
@@ -112,7 +115,7 @@ function insert_hint(id, hint)
 function dyna_hint(triggerId, targetId, hint)
 {
     var trigger = document.getElementById(triggerId);
-    trigger.onchange = function()
+    trigger.onclick = function()
     {
         if (!this.checked)
             return;
@@ -156,7 +159,7 @@ function check_form(form)
         var parent = inputs[i].parentNode;
         var kids = parent.getElementsByTagName("*");
         for (var j=0; j<kids.length; j++)
-            if ((kids[j].nodeName == "LABEL") && (kids[j].getAttribute("for") == inputs[i].id))
+            if ((kids[j].nodeName == "LABEL") && (kids[j].htmlFor == inputs[i].id))
                 label = kids[j];
 
         // Insert error message before label

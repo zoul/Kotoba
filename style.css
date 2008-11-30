@@ -16,7 +16,8 @@ h1
     font-weight: bold;
     text-transform: uppercase;
     color: white;
-    margin-top: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 h1:lang(ja)
@@ -37,6 +38,16 @@ h1 span
     display: block;
     float: left;
     clear: both;
+}
+
+.menu
+{
+    text-transform: lowercase;
+    font-weight: bold;
+    list-style: none;
+    clear: both;
+    padding: 0;
+    padding-top: 15px;
 }
 
 h3
@@ -82,22 +93,13 @@ div.column
 ul {
    padding-left: 0px; 
    list-style: none;
+   margin-left: 0px;
 }
 
 li {
     margin-left: -10px;
     padding-left: 10px;
     background: url(data/bullet.png) 0px 1.1ex no-repeat;
-}
-
-.menu
-{
-    padding-top: 15px;
-    text-transform: lowercase;
-    font-weight: bold;
-    list-style: none;
-    padding-left: 0px; 
-    clear: both;
 }
 
 .menu li, .silent li
