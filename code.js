@@ -178,7 +178,7 @@ function check_form(form)
         if (inputs[i].type == "submit")
             inputs[i].disabled = true;
 
-    alert("OK");
+    alert("Teď by došlo k odeslání formuláře.");
     return false;
 }
 
