@@ -3,6 +3,9 @@ package Kotoba;
 use strict;
 use warnings;
 
+use lib '/home/zoul/.perl/lib/perl/5.8.8';
+use lib '/home/zoul/.perl/share/perl/5.8.8';
+
 use Catalyst::Runtime '5.70';
 use parent qw/Catalyst/;
 use Catalyst qw/ConfigLoader
