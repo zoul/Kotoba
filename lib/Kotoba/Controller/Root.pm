@@ -22,9 +22,8 @@ sub default :Path
 sub background :Global
 {
     my ($self, $c) = @_;
-    my @backgrounds = glob("root/images/bgr*.gif");
-    my $variant = $backgrounds[int(rand(@backgrounds))];
-    ($c->stash->{variant} = $variant) =~ s/root//;
+    my @backgrounds = map { $_ =~ s/root//; $_ } glob("root/images/bgr*.gif");
+    $c->stash->{variant} = $backgrounds[int(rand(@backgrounds))];
     $c->response->content_type("text/css");
 }
 

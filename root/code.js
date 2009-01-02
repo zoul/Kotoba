@@ -10,7 +10,7 @@ function character_to_image(node, chr, img)
 
     var span = document.createElement("span");
     var image = document.createElement("img");
-    image.src = "data/" + img;
+    image.src = "/images/" + img;
     image.className = "replaced";
     span.appendChild(document.createTextNode(before));
     span.appendChild(image);

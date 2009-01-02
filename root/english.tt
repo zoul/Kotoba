@@ -1,5 +1,5 @@
-﻿<div class="column" lang="en">
-    <h1>
+﻿    <div class="column" lang="en">
+        <h1>
         <span>Translation</span>
         <span>&amp; Interpretation</span>
         <span>of Japanese,</span>
@@ -9,7 +9,7 @@
     <ul class="menu">
         <li><a href="#services">Services</a></li>
         <li><a href="#profile">Profile</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#rates">Rates</a></li>
         <li><a href="#form">Form</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -86,8 +86,8 @@
             <li>Translation of commercial correspondence, specialized texts, contracts</li>
         </ul>
     </div>
-    <div class="tab" id="pricing">
-        <h2>Pricing</h2>
+    <div class="tab" id="rates">
+        <h2>Rates</h2>
         <h3>Translation services</h3>
         <ul class="silent">
             <li>Japanese → Czech – 500 Kč/NS</li>

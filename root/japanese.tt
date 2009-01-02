@@ -1,14 +1,13 @@
-﻿<div class="column" lang="ja">
+﻿    <div class="column" lang="ja">
     <h1>
-        <span>チェコ語</span>
-        <span>英語　翻訳</span>
-        <span>通訳</span>
+        <span>チェコ語・英語</span>
+        <span>翻訳・通訳</span>
     </h1>
     <ul class="menu">
         <li><a href="#ja_services">はじめに</a></li>
         <li><a href="#ja_profile">プロフィール</a></li>
         <li><a href="#ja_pricing">料金</a></li>
-        <li><a href="#ja_form">Form</a></li>
+        <li><a href="#ja_form">お見積もり・ご注文</a></li>
         <li><a href="#ja_contact">お問い合わせ</a></li>
     </ul>
     <div class="tab" id="ja_services">
