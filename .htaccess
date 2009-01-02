@@ -1,0 +1,8 @@
+ErrorDocument 401 default
+ErrorDocument 403 default
+ErrorDocument 404 default
+ErrorDocument 500 default
+
+RewriteEngine On
+RewriteRule ^(dispatch\.fcgi/.*)$ - [L]
+RewriteRule ^(.*)$ dispatch.fcgi/$1 [PT,L]
