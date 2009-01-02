@@ -14,7 +14,7 @@ sub forms
     for my $lang (@langs)
     {
         my $form = HTML::FormFu->new;
-        $form->load_config_file("root/form-$lang.yaml");
+        $form->load_config_file("root/form/$lang.yaml");
         $form->process;
         $forms{$lang} = $form;
     }
@@ -32,16 +32,6 @@ sub index :Path :Args(0)
     $c->stash->{template} = "titulka.tt";
 }
 
-sub formtest :Global
-{
-    my ($self, $c) = @_;
-    my $form = HTML::FormFu->new;
-    $form->load_config_file('root/form.yaml');
-    $form->process;
-    $c->stash->{form} = $form;
-    $c->stash->{template} = "formtest.tt";
-    $c->response->content_type("text/plain");
-}
 sub default :Path
 {
     my ($self, $c) = @_;
