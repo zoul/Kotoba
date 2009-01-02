@@ -195,8 +195,19 @@ window.onload = function()
     decorate_arrows(document.body);
     expand_anchor();
     hook_forms();
+
     insert_hint('csform1', "vaše jméno, firma, …");
     insert_hint('csform2', "telefon nebo e-mail");
     dyna_hint('csform3', 'csform5', "Obor překladu, počet dokumentů, orientační rozsah v normostranách nebo slovech, zdrojový a cílový jazyk, termín, …");
     dyna_hint('csform4', 'csform5', "Obor a obsah tlumočení, místo (například město nebo obec), datum, čas, odhadovaná doba tlumočení, …");
+
+    insert_hint('enform1', "Your name, company, …");
+    insert_hint('enform2', "telephone or e-mail");
+    dyna_hint('enform3', 'enform5', "Translation specialization, number of documents, estimated number of words or pages, source language and destination language, term etc.");
+    dyna_hint('enform4', 'enform5', "Specialization and range of interpreting services, location, date, time, estimated time of interpreting, etc.");
+
+    insert_hint('jaform1', "会社名");
+    insert_hint('jaform2', "電話番号またはメールアドレス");
+    dyna_hint('jaform3', 'jaform5', "翻訳分野および内容、文書数、原文ページ数もしくはワード数、元の言語と訳出言語、希望納期");
+    dyna_hint('jaform4', 'jaform5', "通訳分野および内容、場所（町、地方など）、業務日、時間、実働時間数（推測）");
 }
