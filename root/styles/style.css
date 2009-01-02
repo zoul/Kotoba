@@ -166,13 +166,18 @@ div.error p
     color: white;
 }
 
-label.aligned
+.text label
 {
     float: left;
     width: 48px;
     padding: 1px;
     padding-right: 10px;
     text-align: right;
+}
+
+.radiogroup span
+{
+    display: block;
 }
 
 input[type="text"]

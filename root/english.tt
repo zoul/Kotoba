@@ -102,6 +102,10 @@
         <p>Rates vary depending on the content of the documents being
         translated and on the term.</p>
     </div>
+    <div class="tab" id="form">
+        <h2>Form</h2>
+        [% form.render %]
+    </div>
     <div class="tab" id="contact">
         <h2>Contact</h2>
         <p>

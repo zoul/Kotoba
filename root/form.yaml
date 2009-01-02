@@ -1,0 +1,35 @@
+---
+    action: /form/submit
+    indicator: name
+
+    elements:
+        - type: Fieldset
+          elements:
+              - type: Text
+                name: name
+                label: 'Jméno:'
+                id: csform1
+                constraints: 
+                    - Required
+              - type: Text
+                name: contact
+                label: 'Kontakt:'
+                constraints:
+                    - Required
+
+        - type: Radiogroup
+          name: type
+          value: 1
+          options:
+              - [ '1', 'Mám zájem o překlad' ]
+              - [ '2', 'Mám zájem o tlumočení' ]
+
+        - type: Fieldset
+          elements:
+              - type: Textarea
+                name: description
+                label: 'Orientační popis zakázky:'
+
+        - type: Submit
+          name: submit
+          value: odeslat
