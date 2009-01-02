@@ -95,6 +95,10 @@
         </ul>
         <p>掲載された料金はあくまでも目安であり、専門的な難易度、納期等により変動する場合がございます。</p>
     </div>
+    <div class="tab" id="ja_form">
+        <h2>お見積もり・ご注文</h2>
+        [% form_ja.render %]
+    </div>
     <div class="tab" id="ja_contact">
         <h2>お問い合わせ</h2>
         <p>

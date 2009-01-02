@@ -1,19 +1,22 @@
 ---
     action: /form/submit
     indicator: name
+    output_processors:
+        - Indent
 
     elements:
         - type: Fieldset
           elements:
               - type: Text
                 name: name
-                label: 'Jméno:'
-                id: csform1
+                label: 'ご氏名、'
+                id: jaform1
                 constraints: 
                     - Required
               - type: Text
                 name: contact
-                label: 'Kontakt:'
+                label: 'ご連絡先'
+                id: jaform2
                 constraints:
                     - Required
 
@@ -21,15 +24,22 @@
           name: type
           value: 1
           options:
-              - [ '1', 'Mám zájem o překlad' ]
-              - [ '2', 'Mám zájem o tlumočení' ]
+              - value: 1
+                label: '翻訳を依頼したい'
+                attributes:
+                  id: jaform3
+              - value: 2
+                label: '通訳を依頼したい'
+                attributes:
+                  id: jaform4
 
         - type: Fieldset
           elements:
               - type: Textarea
+                id: jaform5
                 name: description
-                label: 'Orientační popis zakázky:'
 
         - type: Submit
           name: submit
-          value: odeslat
+          value: Submit
+          non_param: true

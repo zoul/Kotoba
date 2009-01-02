@@ -7,13 +7,28 @@ use parent 'Catalyst::Controller';
 
 __PACKAGE__->config->{namespace} = '';
 
+sub forms
+{
+    my @langs = qw(cs en ja);
+    my %forms;
+    for my $lang (@langs)
+    {
+        my $form = HTML::FormFu->new;
+        $form->load_config_file("root/form-$lang.yaml");
+        $form->process;
+        $forms{$lang} = $form;
+    }
+    return \%forms;
+}
+
 sub index :Path :Args(0)
 {
     my ($self, $c) = @_;
-    my $form = HTML::FormFu->new;
-    $form->load_config_file('root/form.yaml');
-    $form->process;
-    $c->stash->{form} = $form;
+    my $forms = forms();
+    for my $lang (keys %$forms)
+    {
+        $c->stash->{"form_$lang"} = $forms->{$lang};
+    }
     $c->stash->{template} = "titulka.tt";
 }
 

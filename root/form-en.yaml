@@ -1,0 +1,46 @@
+---
+    action: /form/submit
+    indicator: name
+    output_processors:
+        - Indent
+
+    elements:
+        - type: Fieldset
+          elements:
+              - type: Text
+                name: name
+                label: 'Name:'
+                id: enform1
+                constraints: 
+                    - Required
+              - type: Text
+                name: contact
+                label: 'Contact:'
+                id: enform2
+                constraints:
+                    - Required
+
+        - type: Radiogroup
+          name: type
+          value: 1
+          options:
+              - value: 1
+                label: 'Translation requirement'
+                attributes:
+                  id: enform3
+              - value: 2
+                label: 'Interpreting requirement'
+                attributes:
+                  id: enform4
+
+        - type: Fieldset
+          elements:
+              - type: Textarea
+                name: description
+                label: 'Further information:'
+                id: enform5
+
+        - type: Submit
+          name: submit
+          value: Submit
+          non_param: true

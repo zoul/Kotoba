@@ -107,25 +107,7 @@
     </div>
     <div class="tab" id="poptavka">
         <h2>Poptávka</h2>
-        <form action="form.cgi" method="post">
-            <fieldset>
-                <label for="csform1" class="aligned">Jméno:</label>
-                <input type="text" name="n" id="csform1" class="mandatory"/><br>
-                <label for="csform2" class="aligned">Kontakt:</label>
-                <input type="text" name="k" id="csform2" class="mandatory"/><br>
-            </fieldset>
-            <fieldset>
-                <input id="csform3" type="radio" name="t" value="1" checked="checked"/>
-                <label for="csform3">Mám zájem o překlad</label><br>
-                <input id="csform4" type="radio" name="t" value="2"/>
-                <label for="csform4">Mám zájem o tlumočení</label><br>
-            </fieldset>
-            <fieldset>
-                <label for="csform5">Orientační popis zakázky:</label><br>
-                <textarea id="csform5" class="mandatory"></textarea>
-            </fieldset>
-            <input type="submit" value="Odeslat"/>
-        </form>
+        [% form_cs.render %]
     </div>
     <div class="tab" id="kontakt">
         <h2>Kontakt</h2>
