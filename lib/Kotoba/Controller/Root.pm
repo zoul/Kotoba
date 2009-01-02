@@ -29,7 +29,7 @@ sub index :Path :Args(0)
     {
         $c->stash->{"form_$lang"} = $forms->{$lang};
     }
-    $c->stash->{template} = "titulka.tt";
+    $c->stash->{template} = "templates/titulka.tt";
 }
 
 sub default :Path
@@ -44,6 +44,7 @@ sub background :Global
     my ($self, $c) = @_;
     my @backgrounds = map { $_ =~ s/root//; $_ } glob("root/images/bgr*.gif");
     $c->stash->{variant} = $backgrounds[int(rand(@backgrounds))];
+    $c->stash->{template} = "templates/background.tt";
     $c->response->content_type("text/css");
 }
 
