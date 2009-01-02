@@ -129,6 +129,7 @@ function error_message(lang)
 {
     if (lang == "cs")
         return "Tento údaj je povinný.";
+    return "This is a required field.";
 }
 
 function check_form(form)
@@ -145,11 +146,12 @@ function check_form(form)
         column=column.parentNode;
     var language = column.getAttribute("lang");
 
-    // Check mandatory inputs
+    // Check required fields
     var inputs = form.getElementsByTagName("*");
     for (var i=0; i<inputs.length; i++)
     {
-        if (inputs[i].className.indexOf("mandatory") == -1)
+        // All textareas and textfields are required.
+        if (inputs[i].nodeName != "TEXTAREA" && (inputs[i].getAttribute("type") != "text"))
             continue;
         if (inputs[i].valueChangedByUser && (inputs[i].value != ""))
             continue;
@@ -201,7 +203,7 @@ window.onload = function()
     dyna_hint('csform3', 'csform5', "Obor překladu, počet dokumentů, orientační rozsah v normostranách nebo slovech, zdrojový a cílový jazyk, termín, …");
     dyna_hint('csform4', 'csform5', "Obor a obsah tlumočení, místo (například město nebo obec), datum, čas, odhadovaná doba tlumočení, …");
 
-    insert_hint('enform1', "Your name, company, …");
+    insert_hint('enform1', "your name, company, …");
     insert_hint('enform2', "telephone or e-mail");
     dyna_hint('enform3', 'enform5', "Translation specialization, number of documents, estimated number of words or pages, source language and destination language, term etc.");
     dyna_hint('enform4', 'enform5', "Specialization and range of interpreting services, location, date, time, estimated time of interpreting, etc.");
