@@ -12,13 +12,15 @@
                 label: 'Jméno:'
                 id: csform1
                 constraints: 
-                    - Required
+                    - type: Required
+                      message: "Tento údaj je povinný."
               - type: Text
                 name: contact
                 label: 'Kontakt:'
                 id: csform2
                 constraints:
-                    - Required
+                    - type: Required
+                      message: "Tento údaj je povinný."
 
         - type: Radiogroup
           name: type
@@ -39,6 +41,9 @@
                 name: description
                 label: 'Orientační popis zakázky:'
                 id: csform5
+                constraints:
+                    - type: Required
+                      message: "Tento údaj je povinný."
 
         - type: Submit
           name: submit

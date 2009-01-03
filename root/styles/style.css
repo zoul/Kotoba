@@ -146,7 +146,7 @@ fieldset
     padding-top: 2ex;
 }
 
-div.error
+div.errormsg
 {
     width: 172px;
     margin-left: 58px;
@@ -157,13 +157,13 @@ div.error
     padding-bottom: 7px;
 }
 
-div.wide
+.textarea div.errormsg
 {
     width: 230px;
     margin-left: 0px;
 }
 
-div.error p
+div.errormsg p
 {
     margin: 0px;
     padding: 10px;

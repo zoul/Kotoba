@@ -174,7 +174,7 @@ function check_form(form)
 
         // Insert error message before label
         var error = document.createElement("div");
-        error.className = (inputs[i].nodeName == "TEXTAREA") ? "wide error" : "error";
+        error.className = (inputs[i].nodeName == "TEXTAREA") ? "wide errormsg" : "errormsg";
         error.innerHTML = "<p>" + error_message(language) + "</p>";
         parent.insertBefore(error, label);
         inputs[i].focus();

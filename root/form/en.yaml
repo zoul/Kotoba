@@ -12,13 +12,15 @@
                 label: 'Name:'
                 id: enform1
                 constraints: 
-                    - Required
+                    - type: Required
+                      message: "This is a required field."
               - type: Text
                 name: contact
                 label: 'Contact:'
                 id: enform2
                 constraints:
-                    - Required
+                    - type: Required
+                      message: "This is a required field."
 
         - type: Radiogroup
           name: type
@@ -39,6 +41,9 @@
                 name: description
                 label: 'Further information:'
                 id: enform5
+                constraints:
+                    - type: Required
+                      message: "This is a required field."
 
         - type: Submit
           name: submit

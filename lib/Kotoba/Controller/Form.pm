@@ -22,6 +22,8 @@ sub loadForms
     for my $lang (@FORM_LANGUAGES)
     {
         my $form = HTML::FormFu->new;
+        $form->render_method("tt");
+        $form->add_tt_args({ INCLUDE_PATH => 'root/formfu/' });
         $form->element({ type => 'Hidden', name => 'lang', value => $lang });
         $form->load_config_file("root/form/$lang.yaml");
         $form->process($query) if ($query && $query->{lang} eq $lang);
