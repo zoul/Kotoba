@@ -38,6 +38,7 @@
               - type: Textarea
                 id: jaform5
                 name: description
+                label: 'Further information:'
 
         - type: Submit
           name: submit

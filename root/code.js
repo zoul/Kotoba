@@ -86,7 +86,7 @@ function expand_anchor()
 function insert_hint(id, hint)
 {
     var target = document.getElementById(id);
-    if (target.valueChangedByUser)
+    if (target.valueChangedByUser || (target.value != ''))
         return;
 
     target.value = hint;
@@ -180,8 +180,8 @@ function check_form(form)
         if (inputs[i].type == "submit")
             inputs[i].disabled = true;
 
-    alert("Teď by došlo k odeslání formuláře.");
-    return false;
+    // Form ok, submit.
+    return true;
 }
 
 function hook_forms()

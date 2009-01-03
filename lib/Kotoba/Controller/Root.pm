@@ -3,32 +3,15 @@ package Kotoba::Controller::Root;
 use strict;
 use warnings;
 use HTML::FormFu;
+use Kotoba::Controller::Form qw(loadForms);
 use parent 'Catalyst::Controller';
 
 __PACKAGE__->config->{namespace} = '';
 
-sub forms
-{
-    my @langs = qw(cs en ja);
-    my %forms;
-    for my $lang (@langs)
-    {
-        my $form = HTML::FormFu->new;
-        $form->load_config_file("root/form/$lang.yaml");
-        $form->process;
-        $forms{$lang} = $form;
-    }
-    return \%forms;
-}
-
 sub index :Path :Args(0)
 {
     my ($self, $c) = @_;
-    my $forms = forms();
-    for my $lang (keys %$forms)
-    {
-        $c->stash->{"form_$lang"} = $forms->{$lang};
-    }
+    $c->stash->{form} ||= loadForms();
     $c->stash->{template} = "templates/titulka.tt";
 }
 
@@ -48,6 +31,6 @@ sub background :Global
     $c->response->content_type("text/css");
 }
 
-sub end : ActionClass('RenderView') {}
+sub end :ActionClass('RenderView') {}
 
 1;

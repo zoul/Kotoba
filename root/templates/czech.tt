@@ -107,7 +107,7 @@
     </div>
     <div class="tab" id="poptavka">
         <h2>Poptávka</h2>
-        [% form_cs.render %]
+        [% form.cs.render %]
     </div>
     <div class="tab" id="kontakt">
         <h2>Kontakt</h2>
