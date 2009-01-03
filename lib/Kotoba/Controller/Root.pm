@@ -3,15 +3,15 @@ package Kotoba::Controller::Root;
 use strict;
 use warnings;
 use HTML::FormFu;
-use Kotoba::Controller::Form qw(loadForms);
 use parent 'Catalyst::Controller';
+use Kotoba::Controller::Form qw(loadForms);
 
 __PACKAGE__->config->{namespace} = '';
 
 sub index :Path :Args(0)
 {
     my ($self, $c) = @_;
-    $c->stash->{form} ||= loadForms();
+    $c->stash->{form} ||= Kotoba::Controller::Form::loadForms();
     $c->stash->{template} = "templates/titulka.tt";
 }
 
