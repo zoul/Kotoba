@@ -60,16 +60,30 @@ sub submit :Local
 
 =head2 save
 
-Finish processing a valid form. The form gets sent by an e-mail.
+Finish processing a valid form. The form contents get sent
+by an e-mail to the client, the visitor gets redirected to
+a “form done” page.
 
 =cut
 
 sub save :Private
 {
     my ($self, $c) = @_;
-    $c->response->content_type("text/plain");
-    $c->stash->{template} = "templates/mail.tt";
-    #$c->response->redirect("/");
+    my $lang = $c->stash->{form}->param_value("lang");
+    # TODO: Send the e-mail
+    $c->response->redirect("/form/done/$lang");
+}
+
+=head2 done
+
+Tells the visitor the form has been succesfully submitted.
+
+=cut
+
+sub done :Local
+{
+    my ($self, $c, $lang) = @_;
+    $c->stash->{template} = "templates/done-$lang.tt";
 }
 
 1;

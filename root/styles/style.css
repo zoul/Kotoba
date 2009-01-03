@@ -223,3 +223,18 @@ input[type="submit"]
     border: none;
     text-transform: lowercase;
 }
+
+div#done
+{
+    background: white;
+    width: 300px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+div#done p
+{
+    clear: both;
+    padding-top: 10px;
+}
