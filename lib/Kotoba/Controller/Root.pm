@@ -11,6 +11,9 @@ __PACKAGE__->config->{namespace} = '';
 sub index :Path :Args(0)
 {
     my ($self, $c) = @_;
+    # Pass the debugging flag to the template so that we can
+    # turn off the Google Analytics code in the debugging version.
+    $c->stash->{debug} = $ENV{CATALYST_DEBUG} || $c->debug;
     $c->stash->{form} ||= Kotoba::Controller::Form::loadForms();
     $c->stash->{template} = "templates/titulka.tt";
 }
