@@ -88,13 +88,13 @@ function insert_hint(id, hint)
     var target = document.getElementById(id);
     // The value might have already been set if we’re making
     // a second turnaround with the form.
-    if (target.value != '')
+    if ((target.value != '') && (target.value != target.hint))
         target.valueChangedByUser = true;
     // Do not clobber the user-entered value with the hint.
     if (target.valueChangedByUser)
         return;
 
-    target.value = hint;
+    target.value = target.hint = hint;
     target.className += ' unchanged';
     target.onfocus = function()
     {

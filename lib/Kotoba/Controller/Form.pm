@@ -43,11 +43,15 @@ sub submit :Local
 {
     my ($self, $c) = @_;
     my $allForms = loadForms($c->request->params);
-    for my $form (values %$allForms)
+    my ($form) = grep { $_->submitted } values %$allForms;
+
+    if (not $form->has_errors)
     {
-        next unless $form->submitted;
-        # ...
+        $c->stash->{form} = $form;
+        $c->forward("/form/save");
+        return;
     }
+
     $c->stash->{form} = $allForms;
     $c->forward("/index");
 }
@@ -61,6 +65,9 @@ Finish processing a valid form. The form gets sent by an e-mail.
 sub save :Private
 {
     my ($self, $c) = @_;
+    $c->response->content_type("text/plain");
+    $c->stash->{template} = "templates/mail.tt";
+    #$c->response->redirect("/");
 }
 
 1;
