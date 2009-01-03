@@ -22,8 +22,9 @@ sub loadForms
     for my $lang (@FORM_LANGUAGES)
     {
         my $form = HTML::FormFu->new;
+        $form->element({ type => 'Hidden', name => 'lang', value => $lang });
         $form->load_config_file("root/form/$lang.yaml");
-        $form->process($query);
+        $form->process($query) if ($query && $query->{lang} eq $lang);
         $forms{$lang} = $form;
     }
     return \%forms;
