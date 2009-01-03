@@ -129,6 +129,11 @@ body.jsWorks div.tab, body.jsWorks h2
     display: none;
 }
 
+hr
+{
+    display: none;
+}
+
 /* Forms */
 
 fieldset

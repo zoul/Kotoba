@@ -91,6 +91,7 @@
     </div>
     <div class="tab" id="cenik">
         <h2>Ceník</h2>
+        <!--
         <h3>Překlady</h3>
         <ul class="silent">
             <li>japonština → čeština – 500 Kč/NS</li>
@@ -104,6 +105,8 @@
         </ul>
         <p>Výše uvedené ceny jsou pouze orientační, závisejí na odbornosti,
         popřípadě termínu dodání překladu.</p>
+        -->
+        <p>Orientační ceny budou doplněny během několika následujících dní.</p>
     </div>
     <div class="tab" id="poptavka">
         <h2>Poptávka</h2>

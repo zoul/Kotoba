@@ -82,6 +82,7 @@
     </div>
     <div class="tab" id="ja_pricing">
         <h2>料金</h2>
+        <!--
         <h3>翻訳</h3>
         <ul class="silent">
             <li>日本語 → チェコ語 – 500 Kč/NS</li>
@@ -94,16 +95,18 @@
             <li>チェコ語 ↔ 日本語 – 500 Kč/NS</li>
         </ul>
         <p>掲載された料金はあくまでも目安であり、専門的な難易度、納期等により変動する場合がございます。</p>
+        -->
+        <p>The rates will be published in a few days.</p>
     </div>
-    <div class="tab" id="ja_form">
-        <h2>お見積もり・ご注文</h2>
-        [% form.ja.render %]
-    </div>
-    <div class="tab" id="ja_contact">
-        <h2>お問い合わせ</h2>
-        <p>
-        Radmila Duroňová<br>(ラドミラ・ドゥロニョヴァー)<br>
-        IČ（個人営業登録番号）: 41133188<br>
+<div class="tab" id="ja_form">
+    <h2>お見積もり・ご注文</h2>
+    [% form.ja.render %]
+</div>
+<div class="tab" id="ja_contact">
+    <h2>お問い合わせ</h2>
+    <p>
+    Radmila Duroňová<br>(ラドミラ・ドゥロニョヴァー)<br>
+    IČ（個人営業登録番号）: 41133188<br>
         住所：Hrušovická 899/5<br>
         　　　197 00 Praha 9<br>
         電話： (+420)731 814 739<br>
