@@ -86,7 +86,12 @@ function expand_anchor()
 function insert_hint(id, hint)
 {
     var target = document.getElementById(id);
-    if (target.valueChangedByUser || (target.value != ''))
+    // The value might have already been set if we’re making
+    // a second turnaround with the form.
+    if (target.value != '')
+        target.valueChangedByUser = true;
+    // Do not clobber the user-entered value with the hint.
+    if (target.valueChangedByUser)
         return;
 
     target.value = hint;
@@ -98,15 +103,18 @@ function insert_hint(id, hint)
         this.value = '';
         this.className = this.className.replace("unchanged", '');
     }
-    target.onchange = function()
-    {
-        this.valueChangedByUser = true;
-        this.className = this.className.replace("unchanged", '');
-    }
     target.onblur = function()
     {
+        // User already changed this field some time ago.
         if (this.valueChangedByUser)
             return;
+        // User changed this field just now.
+        if (this.value != '')
+        {
+            this.valueChangedByUser = true;
+            return;
+        }
+        // Field unchanged.
         this.value = hint;
         this.className += " unchanged";
     }
