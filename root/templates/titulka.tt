@@ -5,7 +5,6 @@
     <title>Překlady a tlumočení japonštiny, češtiny a angličtiny</title>
     <link rel="stylesheet" media="screen" href="/styles/style.css" type="text/css">
     <link rel="stylesheet" media="print" href="/styles/print.css" type="text/css">
-    <!--[if IE]><link rel="stylesheet" type="text/css" href="/styles/ie.css" media="screen"><![endif]-->
     <script type="text/javascript" src="/code.js"></script>
 </head>
 <body>

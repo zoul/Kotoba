@@ -11,7 +11,7 @@
         <li><a href="#profile">Profile</a></li>
         <li><a href="#rates">Rates</a></li>
         <li><a href="#form">Form</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contacts">Contact</a></li>
     </ul>
     <div class="tab" id="services">
         <h2>Services</h2>
@@ -109,7 +109,7 @@
         <h2>Form</h2>
         [% form.en.render %]
     </div>
-    <div class="tab" id="contact">
+    <div class="tab" id="contacts">
         <h2>Contact</h2>
         <p>
         Radmila Duroňová<br>

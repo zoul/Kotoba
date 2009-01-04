@@ -35,7 +35,6 @@ h1 span
     padding-right: 6px;
     margin-bottom: 1px;
     white-space: nowrap;
-    display: block;
     float: left;
     clear: both;
 }
@@ -46,8 +45,11 @@ h1 span
     font-weight: bold;
     list-style: none;
     clear: both;
+    margin: 0;
     padding: 0;
     padding-top: 15px;
+    /* sets hasLayout, fixes double padding bug in IE7 */
+    overflow: auto;
 }
 
 h3
@@ -92,13 +94,13 @@ div.column
     padding: 20px;
     margin-right: 20px;
     float: left;
-    min-height: 230px;
+    min-height: 240px;
 }
 
 ul {
-   padding-left: 0px; 
-   list-style: none;
-   margin-left: 0px;
+    padding-left: 0px; 
+    list-style: none;
+    margin-left: 0px;
 }
 
 li {
