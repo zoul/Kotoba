@@ -12,7 +12,6 @@ use Catalyst qw/ConfigLoader
                 Static::Simple
                 Unicode::Encoding/;
 
-Kotoba->config(name => 'Kotoba', encoding => 'UTF-8');
 Kotoba->setup();
 
 1;
