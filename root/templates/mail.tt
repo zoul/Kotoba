@@ -3,7 +3,7 @@
 na vašich webových stránkách někdo vyplnil kontaktní formulář:
 
   Jméno: [% form.param_value('name') %]
-Kontakt: [% c.config.notify %]
+Kontakt: [% form.param_value('contact') %]
 
 [%- IF form.param_value('type') == 1 %]
 Klient má zájem o překlad, podrobný popis zakázky:

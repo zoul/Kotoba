@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use HTML::FormFu;
 use parent 'Catalyst::Controller';
+use Mail::Sender;
 
 our @EXPORT_OK = qw(loadForms);
 our @FORM_LANGUAGES = qw(cs en ja);
@@ -22,10 +23,20 @@ sub loadForms
     for my $lang (@FORM_LANGUAGES)
     {
         my $form = HTML::FormFu->new;
+
+        # Turns on our custom rendering needed
+        # for the validation error messages.
         $form->render_method("tt");
         $form->add_tt_args({ INCLUDE_PATH => 'root/formfu/' });
+
+        # Inserts the language id into each form
+        # so that we can find out which form has
+        # been submitted.
         $form->element({ type => 'Hidden', name => 'lang', value => $lang });
+
+        # Load the form.
         $form->load_config_file("root/form/$lang.yaml");
+        # Fill the form if it has been submitted.
         $form->process($query) if ($query && $query->{lang} eq $lang);
         $forms{$lang} = $form;
     }
@@ -69,8 +80,21 @@ a “form done” page.
 sub save :Private
 {
     my ($self, $c) = @_;
+    my $sender = Mail::Sender->new({
+        auth      => 'PLAIN',
+        smtp      => $self->{smtp},
+        authid    => $self->{sender},
+        authpwd   => $self->{password},
+        on_errors => 'die'
+    });
+    $sender->MailMsg({
+        from      => $self->{sender},
+        to        => $self->{recipient},
+        subject   => $self->{subject},
+        charset   => 'utf-8',
+        msg       => $c->view('TT')->render($c, 'templates/mail.tt')
+    });
     my $lang = $c->stash->{form}->param_value("lang");
-    # TODO: Send the e-mail
     $c->response->redirect("/form/done/$lang");
 }
 
