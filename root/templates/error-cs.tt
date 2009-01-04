@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Nepodařilo se odeslat formulář</title>
+    <link rel="stylesheet" media="screen" href="/styles/style.css" type="text/css">
+</head>
+<body>
+    <div id="done">
+        <h1><span>Chyba</span></h1>
+        <p>Při odesílání formuláře došlo k chybě. Zkuste obnovit stránku,
+        případně formulář vyplnit ještě jednou později. Kdyby problém nezmizel,
+        <a href="mailto:radmila@kotoba.cz">napište nám</a> prosím e-mail nebo
+        nám zavolejte. Omlouváme se za komplikace.</p>
+        <a href="/">Zpátky na stránky →</a>
+    </div>
+</body>

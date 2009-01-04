@@ -80,22 +80,47 @@ a “form done” page.
 sub save :Private
 {
     my ($self, $c) = @_;
+
     my $sender = Mail::Sender->new({
         auth      => 'PLAIN',
         smtp      => $self->{smtp},
         authid    => $self->{sender},
         authpwd   => $self->{password},
-        on_errors => 'die'
+        on_errors => 'code'
     });
-    $sender->MailMsg({
+
+    my $errcode = $sender->MailMsg({
         from      => $self->{sender},
         to        => $self->{recipient},
         subject   => $self->{subject},
         charset   => 'utf-8',
         msg       => $c->view('TT')->render($c, 'templates/mail.tt')
     });
+
+    # We use an ordinary forward here instead of redirect,
+    # so that the user has a chance to resubmit the form by
+    # reloading the page.
+    if ($errcode < 0)
+    {
+        $c->forward("/form/error");
+        return;
+    }
+
     my $lang = $c->stash->{form}->param_value("lang");
     $c->response->redirect("/form/done/$lang");
+}
+
+=head2 error
+
+Tells the visitor there has been an error submitting the form.
+
+=cut
+
+sub error :Local
+{
+    my ($self, $c) = @_;
+    my $lang = $c->stash->{form}->param_value("lang");
+    $c->stash->{template} = "templates/error-$lang.tt";
 }
 
 =head2 done
