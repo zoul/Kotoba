@@ -1,3 +1,0 @@
-– Chybí překlad tlačítka Odeslat v japonštině.
-— Totéž pro Orientační popis zakázky.
-— Totéž pro Tento údaj je povinný. (Máme jen text o hvězdičkách.)
