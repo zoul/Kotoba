@@ -88,22 +88,21 @@
     </div>
     <div class="tab" id="rates">
         <h2>Rates</h2>
-        <!--
         <h3>Translation services</h3>
         <ul class="silent">
-            <li>Japanese → Czech – 500 Kč/NS</li>
-            <li>Czech → Japanese – 500 Kč/NS</li>
-            <li>English → Czech – 500 Kč/NS</li>
-            <li>English → Japanese – 500 Kč/NS</li>
+            <li>Japanese → Czech – 700 CZK / 400 characters</li>
+            <li>Czech → Japanese – 600 CZK / 200 words</li>
+            <li>English → Czech – 500 CZK / 200 words</li>
+            <li>English → Japanese – 500 CZK / 200 words</li>
         </ul>
         <h3>Interpreting services</h3>
         <ul class="silent">
-            <li>Czech ↔ Japanese – 500 Kč/NS</li>
+            <li>4 hours – 5000 CZK</li>
+            <li>8 hours – 8000 CZK</li>
+            <li>Overtime – 1500 CZK / 1 hour</li>
         </ul>
-        <p>Rates vary depending on the content of the documents being
-        translated and on the term.</p>
-        -->
-        <p>The rates will be published in a few days.</p>
+        <p>Rates shown in the price list are only informative. The final price
+        depends on document specialization or delivery term.</p>
     </div>
     <div class="tab" id="form">
         <h2>Form</h2>

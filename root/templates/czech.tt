@@ -91,22 +91,21 @@
     </div>
     <div class="tab" id="cenik">
         <h2>Ceník</h2>
-        <!--
         <h3>Překlady</h3>
         <ul class="silent">
-            <li>japonština → čeština – 500 Kč/NS</li>
-            <li>čeština → japonština – 500 Kč/NS</li>
-            <li>angličtina → čeština – 500 Kč/NS</li>
-            <li>angličtina → japonština – 500 Kč/NS</li>
+            <li>japonština → čeština – 700 Kč / 400 znaků</li>
+            <li>čeština → japonština – 600 Kč / 200 slov</li>
+            <li>angličtina → čeština – 500 Kč / 200 slov</li>
+            <li>angličtina → japonština – 500 Kč / 200 slov</li>
         </ul>
         <h3>Tlumočení</h3>
         <ul class="silent">
-            <li>čeština ↔ japonština – 500 Kč/NS</li>
+            <li>Půlden (4 hodiny) – 5000 Kč</li>
+            <li>Celý den (8 hodin) – 8000 Kč</li>
+            <li>Přesčas – 1500 Kč / 1 hodina</li>
         </ul>
         <p>Výše uvedené ceny jsou pouze orientační, závisejí na odbornosti,
         popřípadě termínu dodání překladu.</p>
-        -->
-        <p>Orientační ceny budou doplněny během několika následujících dní.</p>
     </div>
     <div class="tab" id="poptavka">
         <h2>Poptávka</h2>

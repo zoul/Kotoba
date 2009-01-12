@@ -40,12 +40,12 @@
               - type: Textarea
                 id: jaform5
                 name: description
-                label: 'Further information:'
+                label: 'ご依頼内容'
                 constraints:
                     - type: Required
                       message: "This is a required field."
 
         - type: Submit
           name: submit
-          value: Submit
+          value: 送信
           non_param: true
