@@ -27,11 +27,11 @@
           value: 1
           options:
               - value: 1
-                label: 'Translation requirement'
+                label: 'Interested in translation'
                 attributes:
                   id: enform3
               - value: 2
-                label: 'Interpreting requirement'
+                label: 'Interested in interpreting'
                 attributes:
                   id: enform4
 
