@@ -78,6 +78,11 @@ e-mails has a bug in sending accented e-mailes, it truncates them
 early because of wrong length calculation. Therefore we strip the
 accents from the mail body before sending to get around it.
 
+TODO: Maybe it would be enough to C<use bytes> when sending?
+That way we could send e-mails with accents again.
+
+See L<https://rt.cpan.org/Ticket/Display.html?id=62304>
+
 =cut
 
 sub strip_accents {
