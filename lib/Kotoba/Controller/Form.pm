@@ -2,9 +2,10 @@ package Kotoba::Controller::Form;
 
 use strict;
 use warnings;
-use HTML::FormFu;
 use parent 'Catalyst::Controller';
-use Mail::Sender;
+use HTML::FormFu;
+use Email::Send::SMTP::TLS;
+use Email::Simple::Creator;
 
 our @EXPORT_OK = qw(loadForms);
 our @FORM_LANGUAGES = qw(cs en ja);
@@ -81,27 +82,34 @@ sub save :Private
 {
     my ($self, $c) = @_;
 
-    my $sender = Mail::Sender->new({
-        auth      => 'PLAIN',
-        smtp      => $self->{smtp},
-        authid    => $self->{sender},
-        authpwd   => $self->{password},
-        on_errors => 'code'
+    my $mailer = Email::Send->new({
+        mailer => 'SMTP::TLS',
+        mailer_args => [
+            Host     => $c->config->{smtp_host},
+            User     => $c->config->{smtp_sender},
+            Password => $c->config->{smtp_password},
+            Hello    => 'kotoba.cz',
+            Port     => 587,
+        ]
     });
+    
+    my $email = Email::Simple->create(
+        header => [
+            From    => $c->config->{smtp_sender},
+            To      => $c->config->{smtp_recipient},
+            Subject => $c->config->{smtp_subject},
+        ]);
+    
+    $email->header_set('Content-Type' => 'text/plain; charset=UTF-8');
+    $email->body_set($c->view('TT')->render($c, 'templates/mail.tt'));
 
-    my $errcode = $sender->MailMsg({
-        from      => $self->{sender},
-        to        => $self->{recipient},
-        subject   => $self->{subject},
-        charset   => 'utf-8',
-        msg       => $c->view('TT')->render($c, 'templates/mail.tt')
-    });
+    eval { $mailer->send($email) };
 
     # We use an ordinary forward here instead of redirect,
     # so that the user has a chance to resubmit the form by
     # reloading the page.
-    if ($errcode < 0)
-    {
+    if ($@) {
+        $c->log->debug($@);
         $c->forward("/form/error");
         return;
     }
