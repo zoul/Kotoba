@@ -1,6 +1,9 @@
 #!/usr/bin/env perl
 
+use lib 'lib';
+use lib glob '~/perl5/lib/perl5/';
 use Catalyst::ScriptRunner;
+
 Catalyst::ScriptRunner->run('Kotoba', 'FastCGI');
 
 1;
