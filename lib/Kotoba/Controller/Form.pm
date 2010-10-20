@@ -1,5 +1,6 @@
 package Kotoba::Controller::Form;
 
+use utf8;
 use strict;
 use warnings;
 use parent 'Catalyst::Controller';
@@ -70,6 +71,22 @@ sub submit :Local
     $c->forward("/index");
 }
 
+=head2 strip_accents
+
+This is a hack. The L<Net::SMTP::TLS> module used for sending the
+e-mails has a bug in sending accented e-mailes, it truncates them
+early because of wrong length calculation. Therefore we strip the
+accents from the mail body before sending to get around it.
+
+=cut
+
+sub strip_accents {
+    my $str = shift;
+    $str =~ tr/říšěžťčýůňúěďáéó/riseztcyunuedaeo/;
+    $str =~ tr/ŘÍŠĚŽŤČÝŮŇÚĚĎÁÉÓ/RISEZTCYUNUEDAEO/;
+    return $str;
+}
+
 =head2 save
 
 Finish processing a valid form. The form contents get sent
@@ -101,7 +118,7 @@ sub save :Private
         ]);
     
     $email->header_set('Content-Type' => 'text/plain; charset=UTF-8');
-    $email->body_set($c->view('TT')->render($c, 'templates/mail.tt'));
+    $email->body_set(strip_accents($c->view('TT')->render($c, 'templates/mail.tt')));
 
     eval { $mailer->send($email) };
 
