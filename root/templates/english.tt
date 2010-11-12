@@ -101,8 +101,9 @@
             <li>8 hours – 8000 CZK</li>
             <li>Overtime – 1500 CZK / 1 hour</li>
         </ul>
-        <p>Rates shown in the price list are only informative. The final price
-        depends on document specialization or delivery term.</p>
+        <p>Rates shown in the price list are only informative and do not include
+        the 20% VAT. The final price depends on document specialization or
+        delivery term.</p>
     </div>
     <div class="tab" id="form">
         <h2>Form</h2>
