@@ -1,1 +1,0 @@
-kotoba_server.pl
