@@ -1,5 +1,3 @@
-@import url(/background);
-
 body
 {
     font-family: Arial, sans-serif;
@@ -7,6 +5,7 @@ body
     line-height: 1.5em;
     margin: 20px;
     min-width: 900px;
+    background: url(../img/bgr1.gif);
 }
 
 h1
@@ -106,7 +105,7 @@ ul {
 li {
     margin-left: -10px;
     padding-left: 10px;
-    background: url(/images/bullet.png) 0px 1.1ex no-repeat;
+    background: url(../img/bullet.png) 0px 1.1ex no-repeat;
 }
 
 .menu li, .silent li
@@ -153,7 +152,7 @@ div.errormsg
     width: 172px;
     margin-left: 58px;
     text-align: center;
-    background: url(/images/zobacek.png);
+    background: url(../img/zobacek.png);
     background-repeat: no-repeat;
     background-position: 49% 100%;
     padding-bottom: 7px;
