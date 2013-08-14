@@ -8,6 +8,10 @@ body
     background: url(../img/bgr1.gif);
 }
 
+body.bgr0 { background: url(../img/bgr1.gif); }
+body.bgr1 { background: url(../img/bgr2.gif); }
+body.bgr2 { background: url(../img/bgr3.gif); }
+
 h1
 {
     font-family: Verdana, sans-serif;
