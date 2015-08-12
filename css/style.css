@@ -1,0 +1,247 @@
+body
+{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5em;
+    margin: 20px;
+    min-width: 900px;
+    background: url(../img/bgr1.gif);
+}
+
+body.bgr0 { background: url(../img/bgr1.gif); }
+body.bgr1 { background: url(../img/bgr2.gif); }
+body.bgr2 { background: url(../img/bgr3.gif); }
+
+h1
+{
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h1:lang(ja)
+{
+    font-size: 13px;
+    font-weight: normal;
+}
+
+h1 span
+{
+    background: black;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-bottom: 1px;
+    white-space: nowrap;
+    float: left;
+    clear: both;
+}
+
+.menu
+{
+    text-transform: lowercase;
+    font-weight: bold;
+    list-style: none;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    /* sets hasLayout, fixes double padding bug in IE7 */
+    overflow: auto;
+}
+
+h3
+{
+    font-size: 12px;
+    padding-bottom: 0px;
+}
+
+a {
+  color: black;  
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
+
+a:focus
+{
+    outline: none;
+}
+
+a:hover
+{
+    color: gray;
+}
+
+a.current
+{
+    border: none;
+    cursor: default;
+}
+
+p.offset
+{
+    border-top: 1px solid black;
+    padding-top: 2ex;
+    margin-top: 1ex;
+}
+
+div.column
+{
+    background: white;
+    width: 230px;
+    padding: 20px;
+    margin-right: 20px;
+    float: left;
+    min-height: 240px;
+}
+
+ul {
+    padding-left: 0px; 
+    list-style: none;
+    margin-left: 0px;
+}
+
+li {
+    margin-left: -10px;
+    padding-left: 10px;
+    background: url(../img/bullet.png) 0px 1.1ex no-repeat;
+}
+
+.menu li, .silent li
+{
+    background: none;
+}
+
+.end
+{
+    clear: both;
+}
+
+img.replaced
+{
+    padding-left: 1px;
+    padding-right: 1px;
+    vertical-align: 12%;
+}
+
+body.jsWorks div.tab, body.jsWorks h2
+{
+    display: none;
+}
+
+hr
+{
+    display: none;
+}
+
+/* Forms */
+
+fieldset
+{
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    border-top: 1px solid black;
+    margin-top: 2ex;
+    padding-top: 2ex;
+}
+
+div.errormsg
+{
+    width: 172px;
+    margin-left: 58px;
+    text-align: center;
+    background: url(../img/zobacek.png);
+    background-repeat: no-repeat;
+    background-position: 49% 100%;
+    padding-bottom: 7px;
+}
+
+.textarea div.errormsg
+{
+    width: 230px;
+    margin-left: 0px;
+}
+
+div.errormsg p
+{
+    margin: 0px;
+    padding: 10px;
+    background: black;
+    color: white;
+}
+
+.text label
+{
+    float: left;
+    width: 48px;
+    padding: 1px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.radiogroup span
+{
+    display: block;
+}
+
+input[type="text"]
+{
+    width: 167px;
+    border: 1px solid gray;
+    padding: 1px;
+    margin-bottom: 5px;
+}
+
+textarea
+{
+    width: 230px;
+    height: 130px;
+    margin-top: 1ex;
+    border: 1px solid gray;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+
+.unchanged
+{
+    color: gray;
+}
+
+input[type="submit"]
+{
+    float: right;
+    padding-left: 2ex;
+    padding-right: 2ex;
+    padding-bottom: 4px;
+    padding-top: 2px;
+    margin: 0;
+    margin-top: 1ex;
+    background: black;
+    color: white;
+    border: none;
+    text-transform: lowercase;
+}
+
+div#done
+{
+    position: absolute;
+    top: 20px;
+    left: 310px;
+
+    background: white;
+    width: 230px;
+    padding: 20px;
+}
+
+div#done p
+{
+    clear: both;
+    padding-top: 10px;
+}
